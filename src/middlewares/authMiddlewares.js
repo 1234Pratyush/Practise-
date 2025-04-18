@@ -5,7 +5,7 @@ const requireLogin = (req, res, next) => {
   if (!token) return res.redirect("/sign-in");
 
   try {
-    // Use process.env.SECRET_KEY here
+   
     const decoded = jwt.verify(token, process.env.SECRET_KEY);
     req.userId = decoded.id;
     next();
